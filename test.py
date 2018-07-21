@@ -33,7 +33,8 @@ model.load_parameters("model/img2seq_model.params", ctx=context)
 
 for path in args.images:
     print(path)
-    image = cook_image(load_image(path), image_size).T.expand_dims(0)
+    image = cook_image(load_image(path), image_size)
+    image = image.T.expand_dims(0).as_in_context(context)
     source = features(image)
     hidden = model.begin_state(func=mx.nd.zeros, batch_size=1, ctx=context)
     enc_out, hidden = model.encode(source, hidden)
