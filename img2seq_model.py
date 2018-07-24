@@ -11,7 +11,7 @@ class FeatureExtractor:
 
     def __call__(self, inputs):
         f = self._features(inputs)
-        return mx.nd.swapaxes(f.reshape((f.shape[0], f.shape[1], -1)).T, 1, 2)
+        return f.reshape((f.shape[0], f.shape[1], -1)).transpose(axes=(2, 0, 1))
 
 
 class Seq2seqLSTM(mx.gluon.Block):
