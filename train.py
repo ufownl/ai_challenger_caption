@@ -123,9 +123,9 @@ if __name__ == "__main__":
         try:
             train(
                 num_embed = 128,
-                num_hidden = 1024,
+                num_hidden = 256,
                 num_layers = 2,
-                batch_size = 32,
+                batch_size = 128,
                 image_size = (224, 224),
                 caption_length = 32,
                 context = context,

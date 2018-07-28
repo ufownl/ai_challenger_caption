@@ -6,7 +6,7 @@ from dataset import load_image, cook_image
 from img2seq_model import FeatureExtractor, Seq2seqLSTM
 
 num_embed = 128
-num_hidden = 1024
+num_hidden = 256
 num_layers = 2
 image_size = (224, 224)
 beam_size = 10
